@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'npm-kit-ripple/index.css';
+@import 'swiper/css';
+// @import 'animate.css';
+
+@import '../ui/ui-reset.scss';
+@import '../ui/ui-core.scss';
+@import '../ui/ui-example.scss';
+
+@import '@qpokychuk/fonts/sf-pro-display/index.css';
+@import './frontend--style.scss';
