@@ -1,4 +1,3 @@
-
 const config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -46,8 +45,7 @@ const config = {
       },
     },
   },
-  plugins: [
-    require('@qpokychuk/tailwind-ratio-plugin'),
-  ],
+  plugins: [require('@qpokychuk/tailwind-ratio-plugin')],
 }
+
 export default config

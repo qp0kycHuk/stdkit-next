@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { Images } from "./Started.Images";
+import Image from 'next/image'
+import { Images } from './Started.Images'
 
 export function Started() {
   return (
@@ -23,7 +23,9 @@ export function Started() {
           <div className="started__subtitle">Разработка и реклама сайтов</div>
         </div>
         <div data-scroll data-scroll-speed="1.5">
-          <button className="started__btn btn btn--text btn--contur" data-scroll-to="#service">Узнать как</button>
+          <button className="started__btn btn btn--text btn--contur" data-scroll-to="#service">
+            Узнать как
+          </button>
         </div>
 
         <Images />
