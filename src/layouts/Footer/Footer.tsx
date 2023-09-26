@@ -33,14 +33,14 @@ export function Footer() {
           <div className="footer-nav footer-contacts">
             <div className="text-lg font-semibold mb-6">Контакты</div>
             <a className="text-base opacity-80 mb-5 btn btn--link link-hover">ул.Рождественская Набережная 45/1</a>
-            <a className="text-subtitle-2 opacity-80 mb-5 btn btn--link link-hover">+7 (918) 317-99-73</a>
-            <a className="text-subtitle-2 opacity-80 mb-5 btn btn--link link-hover">info@stdkit.ru</a>
+            <a className="text-lg font-semibold opacity-80 mb-5 btn btn--link link-hover">+7 (918) 317-99-73</a>
+            <a className="text-lg font-semibold opacity-80 mb-5 btn btn--link link-hover">info@stdkit.ru</a>
           </div>
         </div>
 
         <div className="flex my-10">
           <img src="img/footer-logo.svg" alt="" className="mr-3" />
-          <div className="text-subtitle-1">Сложное становится простым</div>
+          <div className="text-xl font-semibold">Сложное становится простым</div>
         </div>
 
         <div className="footer-bottom">
