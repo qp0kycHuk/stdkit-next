@@ -15,15 +15,15 @@ export function Services() {
               или лендинга - это к нам
             </div>
             <div className="text-sm lg:text-lg text-center mt-auto mb-5 index-service-item-sign">
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Корпоративный сайт
               </a>{' '}
               <span>/</span>
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Интернет-магазин
               </a>{' '}
               <span>/</span>
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Лендинг (Landing Page)
               </a>
             </div>
@@ -42,15 +42,15 @@ export function Services() {
               реклама - мы прокачаем ваш сайт
             </div>
             <div className="text-sm lg:text-lg text-center mt-auto mb-5 index-service-item-sign">
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Техническая поддержка
               </a>{' '}
               <span>/</span>
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 SEO-продвижение
               </a>{' '}
               <span>/</span>
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Контекстная реклама
               </a>
             </div>
@@ -69,15 +69,15 @@ export function Services() {
               до администрирования
             </div>
             <div className="text-sm lg:text-lg text-center mt-auto mb-5 index-service-item-sign">
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Дизайн и креатив
               </a>{' '}
               <span>/</span>
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Оформление аккаунта
               </a>{' '}
               <span>/</span>
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Администрирование
               </a>
             </div>
@@ -96,15 +96,15 @@ export function Services() {
               до администрирования
             </div>
             <div className="text-sm lg:text-lg text-center mt-auto mb-5 index-service-item-sign">
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Корпоративный сайт
               </a>{' '}
               <span>/</span>
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Интернет-магазин
               </a>{' '}
               <span>/</span>
-              <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
+              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
                 Лендинг (Landing Page)
               </a>
             </div>

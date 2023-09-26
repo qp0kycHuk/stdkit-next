@@ -1,7 +1,6 @@
 import { screens } from '@/const'
 import { useRouter } from 'next/router'
 import React, { useEffect, useRef } from 'react'
-
 import { LocomotiveScrollProvider, useLocomotiveScroll } from 'react-locomotive-scroll'
 
 export function ScrollContextProvider({ children }: React.PropsWithChildren) {

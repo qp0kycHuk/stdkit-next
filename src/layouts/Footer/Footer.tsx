@@ -7,64 +7,34 @@ export function Footer() {
         <div className="footer-top">
           <div className="footer-nav">
             <div className="text-body-0 text--demibold mb-6">Разработка сайта</div>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Корпоративный сайт
-            </a>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Интернет-магазин
-            </a>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Landing Page
-            </a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Корпоративный сайт</a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Интернет-магазин</a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Landing Page</a>
           </div>
           <div className="footer-nav">
             <div className="text-body-0 text--demibold mb-6">Работа с сайтом</div>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Техническая поддержка
-            </a>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              SEO-продвижение
-            </a>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Контекстная реклама
-            </a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Техническая поддержка</a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">SEO-продвижение</a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Контекстная реклама</a>
           </div>
           <div className="footer-nav">
             <div className="text-body-0 text--demibold mb-6">Ведение соцсетей</div>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Оформление аккаунта
-            </a>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Администрирование
-            </a>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Дизайн и креатив
-            </a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Оформление аккаунта</a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Администрирование</a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Дизайн и креатив</a>
           </div>
           <div className="footer-nav">
             <div className="text-body-0 text--demibold mb-6">Ведение соцсетей</div>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Оформление аккаунта
-            </a>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Администрирование
-            </a>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              Дизайн и креатив
-            </a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Оформление аккаунта</a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Администрирование</a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">Дизайн и креатив</a>
           </div>
           <div className="footer-top__separator"></div>
           <div className="footer-nav footer-contacts">
             <div className="text-body-0 text--demibold mb-6">Контакты</div>
-            <a href="javascript:;" className="text-body-1 fade-80 mb-5 btn btn--link link-hover">
-              ул.Рождественская Набережная 45/1
-            </a>
-            <a href="javascript:;" className="text-subtitle-2 fade-80 mb-5 btn btn--link link-hover">
-              +7 (918) 317-99-73
-            </a>
-            <a href="javascript:;" className="text-subtitle-2 fade-80 mb-5 btn btn--link link-hover">
-              info@stdkit.ru
-            </a>
+            <a className="text-body-1 fade-80 mb-5 btn btn--link link-hover">ул.Рождественская Набережная 45/1</a>
+            <a className="text-subtitle-2 fade-80 mb-5 btn btn--link link-hover">+7 (918) 317-99-73</a>
+            <a className="text-subtitle-2 fade-80 mb-5 btn btn--link link-hover">info@stdkit.ru</a>
           </div>
         </div>
 
