@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import { Images } from './Started.Images'
+import { useRef } from 'react'
 
 export function Started() {
+  const container = useRef<HTMLDivElement>(null)
+
   return (
     <section className="started code-cursor-cover" data-scroll-section>
       <div className="background-wrapper">
@@ -14,7 +17,7 @@ export function Started() {
       </div>
 
       <div className="started-inner">
-        <div className="started__logo-wrapper">
+        <div className="started__logo-wrapper" ref={container}>
           <div className="started__logo">
             <Image width={696} height={196} src="/img/started-logo.svg" alt="" />
           </div>
@@ -28,7 +31,7 @@ export function Started() {
           </button>
         </div>
 
-        <Images />
+        <Images cover={container} />
       </div>
     </section>
   )

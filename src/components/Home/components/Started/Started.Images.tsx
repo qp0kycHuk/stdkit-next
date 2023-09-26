@@ -1,44 +1,51 @@
 'use client'
 
+import { throttle } from 'throttle-debounce'
+import gsap from 'gsap'
 import { useEffect, useRef, useState } from 'react'
 
-export function Images() {
+interface IProps {
+  cover: React.RefObject<HTMLElement>
+}
+
+const DEFAULT_RECT = {
+  x: 0,
+  y: 0,
+  width: 323,
+  height: 297,
+}
+
+export function Images({ cover }: IProps) {
   const images = useRef<HTMLImageElement[]>()
   const mask = useRef<HTMLImageElement>()
   const maskContur = useRef<HTMLImageElement>()
-  const [currentImage, setCurrentImage] = useState<HTMLImageElement>()
+
+  const target = useRef<IRect>(DEFAULT_RECT)
+  const defaults = useRef<IRect>(DEFAULT_RECT)
 
   const $canvas = useRef<HTMLCanvasElement>(null)
-  const context = useRef<CanvasRenderingContext2D | null>()
+  const tween = useRef<gsap.core.Tween>()
 
-  const [rect, setRect] = useState({
-    width: 323,
-    height: 297,
-    x: 0,
-    y: 0,
-  })
-
+  useEffect(addListeners, [cover])
+  useEffect(setSizes, [$canvas.current])
+  useEffect(initImages, [])
   useEffect(() => {
-    // draw()
-  }, [context.current, currentImage])
+    window.addEventListener('load', () => draw(target.current))
+  }, [])
 
-  useEffect(() => {
-    if (!$canvas.current) return
+  function addListeners() {
+    const throttleHandler = throttle(1000 / 30, mousemoveHandler)
 
-    context.current = $canvas.current?.getContext('2d')
-    const size = $canvas.current.getBoundingClientRect()
+    cover.current?.addEventListener('mousemove', throttleHandler)
+    cover.current?.addEventListener('mouseleave', mouseLeaveHandler)
 
-    $canvas.current.width = size.width
-    $canvas.current.height = size.height
+    return () => {
+      cover.current?.removeEventListener('mousemove', throttleHandler)
+      cover.current?.removeEventListener('mouseleave', mouseLeaveHandler)
+    }
+  }
 
-    setRect({
-      ...rect,
-      x: (size.width * 1085) / 1920 + rect.width / 2,
-      y: 70 + rect.height / 2,
-    })
-  }, [$canvas.current])
-
-  useEffect(() => {
+  function initImages() {
     mask.current = createImg('/img/code-mask.svg')
     maskContur.current = createImg('/img/code-mask-contur.svg')
     images.current = [
@@ -46,26 +53,123 @@ export function Images() {
       createImg('/img/started-work-2.jpg'),
       createImg('/img/started-work-3.jpg'),
     ]
+  }
 
-    setCurrentImage(images.current[0])
-  }, [])
+  function setSizes() {
+    if (!$canvas.current) return
 
-  function draw() {
-    if (!$canvas.current || !context.current || !currentImage) return
+    const size = $canvas.current.getBoundingClientRect()
 
-    context.current.clearRect(0, 0, $canvas.current.width, $canvas.current.height)
+    $canvas.current.width = size.width
+    $canvas.current.height = size.height
 
-    // draw mask for picture
-    context.current.globalCompositeOperation = 'source-over'
-    context.current.drawImage(mask.current as HTMLImageElement, rect.x, rect.y, rect.width, rect.height)
+    defaults.current = {
+      ...defaults.current,
+      x: (size.width * 1085) / 1920 + defaults.current.width / 2,
+      y: 70 + defaults.current.height / 2,
+    }
 
-    // draw picture
-    context.current.globalCompositeOperation = 'source-in'
-    context.current.drawImage(currentImage as HTMLImageElement, rect.x, rect.y, rect.width, rect.height)
+    target.current = {
+      ...defaults.current,
+    }
 
-    // draw lidne
-    context.current.globalCompositeOperation = 'source-over'
-    context.current.drawImage(maskContur.current as HTMLImageElement, rect.x + 8, rect.y + 8, rect.width, rect.height)
+    draw(target.current)
+  }
+
+  function mousemoveHandler(event: MouseEvent) {
+    if (!$canvas.current || !cover.current) {
+      return
+    }
+
+    const { left, top } = $canvas.current.getBoundingClientRect()
+    // const { width: coverWidth, left: coverLeft } = cover.current.getBoundingClientRect()
+
+    const offsetX = left + event.clientX
+    const offsetY = -top + event.clientY
+
+    const targetTo = {
+      ...target.current,
+      x: offsetX,
+      y: offsetY,
+    }
+
+    const throttleDraw = throttle(1000 / 60, draw)
+
+    tween.current?.kill()
+    tween.current = gsap.to(target.current, {
+      ...targetTo,
+      onUpdate: () => throttleDraw(target.current),
+      duration: 0.5,
+      ease: 'elastic.out(1, 1)',
+    })
+  }
+
+  function mouseLeaveHandler() {
+    setTimeout(() => {
+      const throttleDraw = throttle(1000 / 60, draw)
+
+      tween.current?.kill()
+      tween.current = gsap.to(target.current, {
+        ...defaults.current,
+        onUpdate: () => throttleDraw(target.current),
+        duration: 0.75,
+        ease: 'elastic.out(1, 1)',
+      })
+    }, 100)
+  }
+
+  function draw(params: IRect) {
+    const context = $canvas.current?.getContext('2d')
+
+    if (!$canvas.current || !cover.current || !context) return
+
+    const position = {
+      x: params.x - params.width / 2,
+      y: params.y - params.height / 2,
+    }
+
+    const { width: coverWidth, left: coverLeft } = cover.current.getBoundingClientRect()
+    let imgBreak = false
+    let currentImage = images.current?.[0]
+
+    images.current?.forEach((image, index, { length }) => {
+      if (imgBreak) return
+
+      if ((params.x - coverLeft) / coverWidth <= (index + 1) / length) {
+        currentImage = image
+        imgBreak = true
+      }
+    })
+
+    if (!currentImage?.complete) {
+      currentImage?.addEventListener('load', () => setTimeout(() => draw(params), 100))
+    }
+
+    context.clearRect(0, 0, $canvas.current.width, $canvas.current.height)
+
+    if (mask.current) {
+      // draw mask for picture
+      context.globalCompositeOperation = 'source-over'
+      context.drawImage(mask.current, position.x, position.y, params.width, params.height)
+    }
+
+    if (currentImage) {
+      // draw picture
+      context.globalCompositeOperation = 'source-in'
+      context.drawImage(currentImage, position.x, position.y, params.width, params.height)
+    }
+
+    if (maskContur.current) {
+      // draw lidne
+      context.globalCompositeOperation = 'source-over'
+      context.drawImage(
+        maskContur.current as HTMLImageElement,
+        position.x + 8,
+        position.y + 8,
+        params.width,
+        params.height
+      )
+    }
   }
 
   return (
@@ -81,4 +185,11 @@ function createImg(src: string) {
   img.src = src
 
   return img
+}
+
+interface IRect {
+  x: number
+  y: number
+  width: number
+  height: number
 }
