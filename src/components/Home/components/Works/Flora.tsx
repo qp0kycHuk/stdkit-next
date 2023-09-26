@@ -1,19 +1,18 @@
 export function Flora() {
   return (
-    <div className="work-wrapper" data-scroll-section id="flora">
+    <div className="work-wrapper" data-scroll-section id="portfolio">
       <div className="work-fixed-target" id="flora-fixed-target"></div>
 
       <section className="work flora" data-scroll data-scroll-sticky data-scroll-target="#flora-fixed-target">
         <div className="container work__container">
           <div className="work__content" data-scroll data-scroll-speed="2">
             <div className="work__title flora__title mb-10 " data-scroll>
-              Магазин цветов <br />
-              Флора <img src="img/work/flora/title-icon-min.png" alt="" />
+              Интернет-магазин <br />
+              цветов Флора <img src="img/work/flora/title-icon-min.png" alt="" />
             </div>
             <div className="leading-normal mb-5 lg:mb-10 work__subtitle mobile-fade-in-down max-lg:text-sm" data-scroll>
-              Интернет-магазин цветов «Флора» предлагает <br />
-              уникальные букеты живых цветов собранные по всем <br />
-              правилам флористики
+              Ресурс разработан для уникального города <br />
+              России - Норильска
             </div>
             <div
               className="text-xl lg:text-1.5xl font-semibold leading-normal work__sign mobile-fade-in-down "

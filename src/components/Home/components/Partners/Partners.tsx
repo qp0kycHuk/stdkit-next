@@ -1,115 +1,80 @@
+import Image from 'next/image'
+
+const items: IPartner[] = [
+  {
+    name: 'КубГАУ - один из признанных лидеров высшего аграрного образовании в России',
+    image: '/img/partners/kubsau.png',
+  },
+  {
+    name: 'Крупнейшая электросетевая компания на территории Краснодарского края и Республики Адыгея',
+    image: '/img/partners/rosseti.png',
+  },
+  {
+    name: 'Крупнейшее предприятие чаеводческой отрасли России, ведущее свою историю еще с далёкого 1947 года',
+    image: '/img/partners/matsesta.png',
+  },
+  {
+    name: 'Японский сад заложен в 2021 года в парке «Краснодар». Пейзаж проникнут тайной и символикой в каждом его уголке.',
+    image: '/img/partners/park-krasnodar.png',
+  },
+  {
+    name: 'Крупнейший лечебный бальнеологический комплекс России, основанный в 1902 году на целебных сероводородных источниках',
+    image: '/img/partners/matsesta-bk.png',
+  },
+  {
+    name: 'Единственный в России профессиональный коллектив народного творчества, имеющий непрерывную преемственную историю с начала XIX века',
+    image: '/img/partners/kkx.png',
+  },
+  {
+    name: 'Завод минеральных вод "Горячеключевской" - производитель лечебной минеральной воды с 1967 года.',
+    image: '/img/partners/gk.png',
+  },
+  {
+    name: 'Ассоциация «РОСТСЕЛЬМАШ - ЛИГА» – развитие и пропаганда детско-юношеского регби в Ростовской области',
+    image: '/img/partners/rsmliga.png',
+  },
+  {
+    name: 'Команда Кравченко - Эксперты Краснодара по недвижимости, строительству и интерьерам',
+    image: '/img/partners/krav.png',
+  },
+  {
+    name: 'Новая Кубань — современное независимое общественно-политическое издание, крупный новостной портал',
+    image: '/img/partners/new-kuban.png',
+  },
+  {
+    name: 'Совместный проект от “Стройхлам” и “Команды Кравченко”. Подбор и экспертиза частных домов',
+    image: '/img/partners/dompodbor.png',
+  },
+  // {
+  //   name: 'Федеральное государственное бюджетное образовательное учреждение высшего образования',
+  //   image: '/img/partners/konditer.png',
+  // },
+  {
+    name: 'Флора Норильск - уникальный проект, интернет-магазин и сеть цветочных магазинов в городе Норильск',
+    image: '/img/partners/flora.png',
+  },
+]
+
 export function Partners() {
   return (
     <section className="partners" data-scroll-section>
       <div className="partners__title">работаем с 2014 года</div>
 
       <div className="partners-grid">
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/kubsau.png" alt="" />
+        {items.map((item, index) => (
+          <div className="partners-item mobile-fade-in-down" data-scroll key={index}>
+            <div className="partners-item__img">
+              <Image src={item.image} alt="" width={200} height={200} />
+            </div>
+            <div className="partners-item__title">{item.name}</div>
           </div>
-          <div className="partners-item__title">
-            КубГАУ - один из признанных лидеров высшего аграрного образовании в России
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/rosseti.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Оказание услуг снабжения электроэнергией потребителей Краснодарского края и Адыгеи
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/matsesta.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Крупнейшее предприятие чаеводческой отрасли России, ведущее свою историю еще с далёкого 1947 года
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/park-krasnodar.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Японский сад заложен в 2021 и открыт в сентябре 2022 года в парке «Краснодар»
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/kkx.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Профессиональный хоровой певческий коллектив, основанный в 1811 году
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/gk.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Федеральное государственное бюджетное образовательное учреждение высшего образования
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/krav.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Вся база актуальной недвижимости в одном месте. Ремонты квартир и домов любой сложности!
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/rsmliga.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Развитие физической культуры и спорта, Проведение Чемпионатов, Первенств и прочих Турниров
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/new-kuban.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Общественно-политическая газета, а также крупнейший новостной портал края
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/dompodbor.png" alt="" />
-          </div>
-          <div className="partners-item__title">Помощь в покупке/продаже недвижимости в Москве, СПб и Сочи</div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/konditer.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Федеральное государственное бюджетное образовательное учреждение высшего образования
-          </div>
-        </div>
-
-        <div className="partners-item mobile-fade-in-down" data-scroll>
-          <div className="partners-item__img">
-            <img src="img/partners/flora.png" alt="" />
-          </div>
-          <div className="partners-item__title">
-            Уникальные букеты живых цветов собранные по всем правилам флористики
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   )
+}
+
+interface IPartner {
+  image: string
+  name: string
 }

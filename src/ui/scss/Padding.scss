@@ -29,52 +29,54 @@
 	}
 }
 
-.p {
-	@include AddMedia {
-		@include Padding;
-
-	}
-
-
-	&x {
+@layer components {
+	.p {
 		@include AddMedia {
-			@include Padding(x);
+			@include Padding;
 
 		}
-	}
 
-	&y {
-		@include AddMedia {
-			@include Padding(y);
 
+		&x {
+			@include AddMedia {
+				@include Padding(x);
+
+			}
 		}
-	}
 
-	&b {
-		@include AddMedia {
-			@include Padding(bottom);
+		&y {
+			@include AddMedia {
+				@include Padding(y);
 
+			}
 		}
-	}
 
-	&t {
-		@include AddMedia {
-			@include Padding(top);
+		&b {
+			@include AddMedia {
+				@include Padding(bottom);
 
+			}
 		}
-	}
 
-	&l {
-		@include AddMedia {
-			@include Padding(left);
+		&t {
+			@include AddMedia {
+				@include Padding(top);
 
+			}
 		}
-	}
 
-	&r {
-		@include AddMedia {
-			@include Padding(right);
+		&l {
+			@include AddMedia {
+				@include Padding(left);
 
+			}
+		}
+
+		&r {
+			@include AddMedia {
+				@include Padding(right);
+
+			}
 		}
 	}
 }

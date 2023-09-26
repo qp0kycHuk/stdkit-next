@@ -54,52 +54,54 @@
 	}
 }
 
-.m {
-	@include AddMedia {
-		@include Margin;
-
-	}
-
-
-	&x {
+@layer components {
+	.m {
 		@include AddMedia {
-			@include Margin(x);
+			@include Margin;
 
 		}
-	}
 
-	&y {
-		@include AddMedia {
-			@include Margin(y);
 
+		&x {
+			@include AddMedia {
+				@include Margin(x);
+
+			}
 		}
-	}
 
-	&b {
-		@include AddMedia {
-			@include Margin(bottom);
+		&y {
+			@include AddMedia {
+				@include Margin(y);
 
+			}
 		}
-	}
 
-	&t {
-		@include AddMedia {
-			@include Margin(top);
+		&b {
+			@include AddMedia {
+				@include Margin(bottom);
 
+			}
 		}
-	}
 
-	&l {
-		@include AddMedia {
-			@include Margin(left);
+		&t {
+			@include AddMedia {
+				@include Margin(top);
 
+			}
 		}
-	}
 
-	&r {
-		@include AddMedia {
-			@include Margin(right);
+		&l {
+			@include AddMedia {
+				@include Margin(left);
 
+			}
+		}
+
+		&r {
+			@include AddMedia {
+				@include Margin(right);
+
+			}
 		}
 	}
 }

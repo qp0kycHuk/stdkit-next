@@ -1,8 +1,8 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { throttle } from 'throttle-debounce'
 import gsap from 'gsap'
-import { useEffect, useRef, useState } from 'react'
 
 interface IProps {
   cover: React.RefObject<HTMLElement>

@@ -12,10 +12,8 @@ export function Park() {
               Краснодар
             </div>
             <div className="leading-normal mb-5 lg:mb-10 work__subtitle mobile-fade-in-down max-lg:text-sm" data-scroll>
-              Эстетика, современный стиль, комфорт – все это <br />
-              про наше место отдыха. <br />
-              Приезжайте и наслаждайтесь <br />
-              спокойным отдыхом в приятном окружении!
+              Разработка ПО для инфомата Японского сада - наш <br />
+              маленький вклад в невероятный проект
             </div>
             <div
               className="text-xl lg:text-1.5xl font-semibold leading-normal work__sign mobile-fade-in-down"

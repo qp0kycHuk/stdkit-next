@@ -1,11 +1,9 @@
-// out: false
+@layer components {
+	.icon {
+		min-width: 1em;
+		width    : 1em;
+		height   : 1em;
+		display  : block;
 
-
-
-.icon {
-	min-width: 1em;
-	width    : 1em;
-	height   : 1em;
-	display  : block;
-
+	}
 }

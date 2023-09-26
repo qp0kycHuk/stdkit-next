@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.4",
     "@qpokychuk/fonts": "^1.0.10",
     "@qpokychuk/tailwind-ratio-plugin": "^2.0.0",
     "@types/node": "20.6.3",

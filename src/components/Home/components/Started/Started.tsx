@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import { Images } from './Started.Images'
 import { useRef } from 'react'
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
 export function Started() {
   const container = useRef<HTMLDivElement>(null)
+  const { scroll } = useLocomotiveScroll()
 
   return (
     <section className="started code-cursor-cover" data-scroll-section>
@@ -23,10 +25,10 @@ export function Started() {
           </div>
         </div>
         <div data-scroll data-scroll-speed="1.5">
-          <div className="started__subtitle">Разработка и реклама сайтов</div>
+          <div className="started__subtitle">Разработка и продвижение сайтов</div>
         </div>
         <div data-scroll data-scroll-speed="1.5">
-          <button className="started__btn btn btn--text btn--contur" data-scroll-to="#service">
+          <button className="started__btn btn btn--text btn--contur" onClick={() => scroll.scrollTo('#service')}>
             Узнать как
           </button>
         </div>

@@ -1,4 +1,8 @@
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
+
 export function Nothing() {
+  const { scroll } = useLocomotiveScroll()
+
   return (
     <section className="nothing" data-scroll-section>
       <div className="nothing-background">
@@ -35,7 +39,7 @@ export function Nothing() {
           <div className="nothing-money" data-scroll>
             <img src="img/money.png" alt="" />
           </div>{' '}
-          в прибыльный <br />
+          в эффективный <br />
           интернет-ресурс{' '}
           <div className="nothing-rocket" data-scroll>
             <img src="img/rocket.png" alt="" />
@@ -47,8 +51,8 @@ export function Nothing() {
           data-scroll-delay="0.1"
           data-scroll-speed="2"
         >
-          Наша работа находится на стыке творчества и технологий
-          <span>Можете посмотреть наши лучшие работы</span>
+          Работа нашей Студии находится на стыке творчества и технологий
+          <span>Некоторые интересные работы</span>
         </div>
         <div
           className="flex mobile-fade-in-down"
@@ -57,7 +61,7 @@ export function Nothing() {
           data-scroll-speed="2.5"
           data-scroll-to="#flora"
         >
-          <button className="nothing__btn btn btn--text btn--contur">
+          <button className="nothing__btn btn btn--text btn--contur" onClick={() => scroll.scrollTo('#portfolio')}>
             <svg className="icon">
               <use xlinkHref="img/icons.svg#to-down" />
             </svg>
