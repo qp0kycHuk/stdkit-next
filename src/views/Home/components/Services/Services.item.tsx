@@ -35,7 +35,7 @@ export function Item({ item }: IProps) {
       </div>
       <div className="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
         <div className="text-2.5xl lg:text-3xl font-bold mb-7 text-center index-service-item-title">{item.title}</div>
-        <div className="fade-60 lg:text-lg text-center index-service-item-subtitle">{item.description}</div>
+        <div className="opacity-60 lg:text-lg text-center index-service-item-subtitle">{item.description}</div>
         <div className="text-sm lg:text-lg text-center mt-auto mb-5 index-service-item-sign">
           {item.links?.map(({ path, name }, index) => (
             <Fragment key={index}>

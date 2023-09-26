@@ -9,12 +9,12 @@ export function Header({ isIndex }: IHeaderProps) {
   return (
     <>
       <header className="header">
-        <button className="btn btn--text btn-icon mr-4 d-md-none" data-toggle-link="menu">
+        <button className="btn btn--text btn-icon mr-4 md:hidden" data-toggle-link="menu">
           <svg className="icon">
             <use xlinkHref="img/icons.svg#menu" />
           </svg>
         </button>
-        <Link href="/" className="header-logo mr-auto mr-md-0">
+        <Link href="/" className="header-logo mr-auto md:mr-0">
           <div className="header-logo__img">
             <img src="img/header-logo-img.svg" alt="" />
           </div>

@@ -14,8 +14,8 @@ export function Place() {
               Разработка сайта для места силы Александра Кравченко
             </div>
             <div className="text-xl lg:text-1.5xl leading-normal work__sign mobile-fade-in-down" data-scroll>
-              Разработка <span className="fade-40">сайта</span> <br />
-              Продвижение <span className="fade-40">в топ</span> <br />
+              Разработка <span className="opacity-40">сайта</span> <br />
+              Продвижение <span className="opacity-40">в топ</span> <br />
               Техническая поддержка
             </div>
             <div className="mb-10"></div>
