@@ -6,8 +6,22 @@ import { Flora } from './components/Works/Flora'
 import { Place } from './components/Works/Place'
 import { Park } from './components/Works/Park'
 import { Partners } from './components/Partners/Partners'
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 export function Home() {
+  const { scroll } = useLocomotiveScroll()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.query.id === 'portfolio' || router.query.id?.includes('portfolio')) {
+      setTimeout(() => {
+        scroll.scrollTo('#portfolio', { duration: 0, disableLerp: true })
+      }, 20)
+    }
+  }, [router.asPath])
+
   return (
     <>
       <Head>

@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import * as React from 'react'
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
 export interface IHeaderProps {
   isIndex: boolean
 }
 
 export function Header({ isIndex }: IHeaderProps) {
+  const { scroll } = useLocomotiveScroll()
+
   return (
     <>
       <header className="header">
@@ -25,11 +28,10 @@ export function Header({ isIndex }: IHeaderProps) {
             Услуги
           </Link>
 
-          {isIndex && (
-            <button className="header-nav__item" data-scroll-to="#flora">
-              Портфолио
-            </button>
-          )}
+          <Link href="/portfolio/" onClick={() => scroll?.scrollTo('#portfolio')} className="header-nav__item">
+            Портфолио
+          </Link>
+
           <Link href="/contacts/" className="header-nav__item">
             Контакты
           </Link>

@@ -6,9 +6,11 @@ import { ScrollContextProvider } from './Scroll/Scroll'
 export function Layout({ children }: React.PropsWithChildren) {
   const { asPath } = useRouter()
 
+  const isIndex = asPath === '/' || asPath.includes('/portfolio')
+
   return (
     <ScrollContextProvider>
-      <Header isIndex={asPath === '/'} />
+      <Header isIndex={isIndex} />
       {children}
       <Footer />
     </ScrollContextProvider>
