@@ -1,4 +1,4 @@
-import { Credentials } from './Footer.Credentials'
+// import { Credentials } from './Footer.Credentials'
 
 export function Footer() {
   return (
@@ -53,7 +53,7 @@ export function Footer() {
           </div>
         </div>
       </footer>
-      <Credentials />
+      {/* <Credentials /> */}
     </>
   )
 }
