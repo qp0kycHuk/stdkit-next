@@ -11,7 +11,7 @@ export function Contacts() {
       <section className="contact-page" data-scroll-section>
         <div className="contact-page-map" id="map">
           <YMaps>
-            <Map width="100%" height="100%" defaultState={{ center: [45.03191, 38.915172], zoom: 16 }}>
+            <Map width="100%" height="100%" defaultState={{ center: [45.03191, 38.915172], zoom: 16, behaviors: [] }}>
               <Placemark
                 geometry={[45.03191, 38.921172]}
                 options={{

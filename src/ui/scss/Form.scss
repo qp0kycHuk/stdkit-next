@@ -3,19 +3,28 @@
 
 
 .form {
+
+
+	@media (hover) {
+
+		&-field:hover &-checkbox-target,
+		&-field:hover &-radio-target {
+			box-shadow: 0 0 0 5px var(--color-primary-10);
+		}
+	}
 	&-field {
-		display      : block;
-		cursor       : pointer;
-		position     : relative;
 		--error-color: var(--color-red);
 		--field-color: var(--color-primary);
+		display      : block;
+		position     : relative;
+		cursor       : pointer;
 	}
 
 	&-helper {
-		font-size  : 12px;
 		width      : max-content;
-		margin-left: auto;
 		margin-top : 2px;
+		margin-left: auto;
+		font-size  : 12px;
 		color      : var(--color-text-60);
 	}
 
@@ -30,25 +39,48 @@
 
 
 	&-input {
-		outline  : none !important;
+
+		--input-radius: 8px;
 		display  : flex;
-		height   : 50px;
-		position : relative;
-		padding  : calc(var(--spacing) * 2) calc(var(--spacing) * 4);
 		flex-grow: 1;
-
-		cursor    : inherit;
-		outline   : none;
-		appearance: none;
-
-		font-size  : 14px;
-		font-family: var(--font-base);
-		color      : var(--color-text);
+		position : relative;
+		height   : 50px;
+		padding  : calc(var(--spacing) * 2) calc(var(--spacing) * 4);
 
 		background-color: var(--bg3);
 		border          : 1px solid var(--color-text-10);
+		outline  : none !important;
+		outline   : none;
+		font-family: var(--font-base);
 
-		--input-radius: 8px;
+		font-size  : 16px;
+		color      : var(--color-text);
+
+		cursor    : inherit;
+		appearance: none;
+
+
+		&:focus {
+			border-color: var(--color-icon);
+			z-index     : 2;
+		}
+
+		&:disabled {
+			background-color: var(--bg2);
+			border          : 1px solid var(--color-text-10);
+			color           : var(--color-text-60);
+			opacity         : .8;
+
+			&:placeholder {
+				color: var(--color-text-60);
+			}
+		}
+
+		&[type="date"]::-webkit-calendar-picker-indicator,
+		&[type="time"]::-webkit-calendar-picker-indicator {
+			background    : none;
+			pointer-events: none;
+		}
 
 		&:first-of-type {
 			border-start-start-radius: var(--input-radius);
@@ -65,50 +97,9 @@
 		}
 
 
-		&:focus {
-			border-color: var(--color-icon);
-			z-index     : 2;
-		}
-
-		&:disabled {
-			color           : var(--color-text-60);
-			border          : 1px solid var(--color-text-10);
-			background-color: var(--bg2);
-			opacity         : .8;
-
-			&:placeholder {
-				color: var(--color-text-60);
-			}
-		}
-
-
 
 		&::placeholder {
 			opacity: 1;
-		}
-
-		&[type="date"]::-webkit-calendar-picker-indicator,
-		&[type="time"]::-webkit-calendar-picker-indicator {
-			background    : none;
-			pointer-events: none;
-		}
-
-
-
-		&.active {
-			border-color: var(--color-primary);
-			box-shadow  : 0 0 0 1px var(--color-primary);
-			z-index     : 2;
-		}
-
-		&.error {
-			color       : var(--color-red);
-			border-color: var(--color-red);
-			z-index     : 2;
-
-			&::placeholder {
-				color: var(--color-red);
-			}
 		}
 
 
@@ -120,15 +111,33 @@
 		&:is(textarea) {
 			min-height: 128px;
 		}
+
+
+
+		&.active {
+			border-color: var(--color-primary);
+			box-shadow  : 0 0 0 1px var(--color-primary);
+			z-index     : 2;
+		}
+
+		&.error {
+			border-color: var(--color-red);
+			color       : var(--color-red);
+			z-index     : 2;
+
+			&::placeholder {
+				color: var(--color-red);
+			}
+		}
 	}
 
 	&-input-start,
 	&-input-end {
+		display    : flex;
+		align-items: center;
 		position   : absolute;
 		top        : 0;
 		height     : 100%;
-		display    : flex;
-		align-items: center;
 		z-index    : 3;
 	}
 
@@ -148,8 +157,8 @@
 
 	&-input-checkbox {
 		position: absolute;
-		left    : 0;
 		top     : 0;
+		left    : 0;
 		width   : 0;
 		height  : 0;
 		overflow: hidden;
@@ -157,8 +166,8 @@
 
 		background: none;
 		border    : none;
-		outline   : none;
 		box-shadow: none;
+		outline   : none;
 		z-index   : -1;
 	}
 
@@ -166,31 +175,31 @@
 		--cover-width : 46px;
 		--cover-height: 26px;
 		--padding     : 2px;
+		position      : relative;
 		width         : var(--cover-width);
 		min-width     : var(--cover-width);
 		height        : var(--cover-height);
+		overflow      : hidden;
 		background    : var(--color-text-40);
 		border-radius : 20px;
-		position      : relative;
-		overflow      : hidden;
 
 		&:before {
 			--size: 22px;
 
 			content      : '';
-			width        : var(--size);
-			height       : var(--size);
-			border-radius: 50%;
-			background   : var(--bg3);
-
-			box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
 			display   : block;
 
-			transition: .2s ease;
-
 			position: absolute;
-			left    : var(--padding);
 			top     : calc(50% - var(--size) / 2);
+			left    : var(--padding);
+			width        : var(--size);
+			height       : var(--size);
+			background   : var(--bg3);
+			border-radius: 50%;
+
+			box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+
+			transition: .2s ease;
 		}
 	}
 
@@ -203,26 +212,26 @@
 	}
 
 	&-checkbox-target {
-		// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
-		background         : var(--bg3);
-		border             : 1px solid var(--color-text-40);
-		border-radius      : 4px;
-		background-position: center;
 		display            : block;
-		min-width          : 18px;
-		width              : 18px;
-		height             : 18px;
 
 		display        : flex;
 		align-items    : center;
 		justify-content: center;
+		width              : 18px;
+		min-width          : 18px;
+		height             : 18px;
+		// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
+		background         : var(--bg3);
+		background-position: center;
+		border             : 1px solid var(--color-text-40);
+		border-radius      : 4px;
 
 		.icon {
 			font-size     : 12px;
 			color         : transparent;
-			pointer-events: none;
-			transition    : .2s ease;
 			transform     : scale(0);
+			transition    : .2s ease;
+			pointer-events: none;
 		}
 
 
@@ -240,34 +249,34 @@
 	}
 
 	&-radio-target {
-		// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
-		background         : var(--bg3);
-		border             : 1px solid var(--color-text-40);
-		background-position: center;
-		min-width          : 18px;
-		width              : 18px;
-		height             : 18px;
-		border-radius      : 50%;
 
 
 		display        : flex;
 		align-items    : center;
 		justify-content: center;
+		width              : 18px;
+		min-width          : 18px;
+		height             : 18px;
+		// background         : linear-gradient(180deg, #FFFFFF 0%, rgba(176, 176, 176, 0.51) 100%), #FFFFFF;
+		background         : var(--bg3);
+		background-position: center;
+		border             : 1px solid var(--color-text-40);
+		border-radius      : 50%;
 
 
 
 		&:before {
 			content      : '';
+			display      : block;
 			width        : 10px;
 			height       : 10px;
-			border-radius: 50%;
-			display      : block;
 			margin       : auto;
 			background   : var(--color-primary);
-
-			transition: .2s ease;
+			border-radius: 50%;
 			opacity   : 0;
 			transform : scale(0);
+
+			transition: .2s ease;
 		}
 
 
@@ -280,17 +289,21 @@
 		animation: check .3s forwards;
 
 		&:before {
-			transform: none;
 			opacity  : 1;
+			transform: none;
 		}
 	}
 
 
-	@media (hover) {
-
-		&-field:hover &-checkbox-target,
-		&-field:hover &-radio-target {
-			box-shadow: 0 0 0 5px var(--color-primary-10);
+	&-select {
+		&-icon {
+			position      : absolute;
+			top           : calc(50% - 5px);
+			right         : 10px;
+			font-size     : 10px;
+			color         : var(--color-icon);
+			z-index       : 3;
+			pointer-events: none;
 		}
 	}
 
@@ -301,21 +314,8 @@
 	&-checkbox &-input-checkbox.disabled~&-checkbox-target,
 	&-checkbox &-input-checkbox:disabled~&-checkbox-target {
 		box-shadow    : none;
-		pointer-events: none;
 		opacity       : .5;
-	}
-
-
-	&-select {
-		&-icon {
-			position      : absolute;
-			font-size     : 10px;
-			right         : 10px;
-			top           : calc(50% - 5px);
-			color         : var(--color-icon);
-			z-index       : 3;
-			pointer-events: none;
-		}
+		pointer-events: none;
 	}
 
 }
@@ -331,38 +331,38 @@
 }
 
 .range {
-	cursor  : pointer;
 	position: relative;
+	cursor  : pointer;
 
 
 	&-inner {
+		position      : relative;
+
+		position: absolute;
+		top     : -12px;
+		left    : 0;
+		width   : 100%;
 		// padding: 20px;
 		// margin : -20px;
 		padding-top   : 12px;
 		padding-bottom: 12px;
-		position      : relative;
-
-		position: absolute;
-		left    : 0;
-		width   : 100%;
-		top     : -12px;
 	}
 
 	&-btn {
 		display      : flex;
-		background   : var(--color-primary);
-		border       : 3px solid var(--bg3);
-		box-shadow   : 0px 1px 1px rgba(0, 0, 0, 0.24);
 		position     : absolute;
-		width        : 22px;
-		height       : 22px;
-		border-radius: 50%;
+		top           : calc(50% - 11px);
 
 		left          : 0;
-		top           : calc(50% - 11px);
+		width        : 22px;
+		height       : 22px;
+		background   : var(--color-primary);
+		border       : 3px solid var(--bg3);
+		border-radius: 50%;
+		box-shadow   : 0px 1px 1px rgba(0, 0, 0, 0.24);
 		transform     : translateX(-50%);
-		pointer-events: none;
 		transition    : .1s;
+		pointer-events: none;
 	}
 
 	&-line {
@@ -374,13 +374,13 @@
 
 	&-progress {
 		position      : absolute;
-		left          : 0;
 		top           : 12px;
+		left          : 0;
 		height        : 5px;
 		background    : var(--color-primary);
 		border-radius : 0px 0px 6px 6px;
-		pointer-events: none;
 		transition    : .1s;
+		pointer-events: none;
 	}
 
 	&-value {
@@ -391,7 +391,7 @@
 
 .form-range {
 	position: absolute;
-	left    : -1px;
 	bottom  : 5px;
+	left    : -1px;
 	width   : calc(100% + 2px);
 }

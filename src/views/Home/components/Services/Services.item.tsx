@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react'
+import { ServiceLink } from './Services.Link'
 
 interface IProps {
   item: IServiceItem
@@ -37,12 +38,10 @@ export function Item({ item }: IProps) {
         <div className="text-2.5xl lg:text-3xl font-bold mb-7 text-center index-service-item-title">{item.title}</div>
         <div className="opacity-60 lg:text-lg text-center index-service-item-subtitle">{item.description}</div>
         <div className="text-sm lg:text-lg text-center mt-auto mb-5 index-service-item-sign">
-          {item.links?.map(({ path, name }, index) => (
+          {item.links?.map((item, index) => (
             <Fragment key={index}>
               {index > 0 && <span> / </span>}
-              <a data-fancybox-modal data-type="ajax" data-src="dialog-form.html">
-                {name}
-              </a>{' '}
+              <ServiceLink item={item} />
             </Fragment>
           ))}
         </div>

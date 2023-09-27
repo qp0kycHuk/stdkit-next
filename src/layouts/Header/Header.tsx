@@ -21,9 +21,9 @@ export function Header({ isIndex }: IHeaderProps) {
           <div className="header-logo__text">Веб-студия КИТ</div>
         </Link>
         <div className="header-nav">
-          <a href="" className="header-nav__item">
+          <Link href="/services/" className="header-nav__item">
             Услуги
-          </a>
+          </Link>
 
           {isIndex && (
             <button className="header-nav__item" data-scroll-to="#flora">

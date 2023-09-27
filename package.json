@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@pbe/react-yandex-maps": "^1.2.4",
     "@qpokychuk/fonts": "^1.0.10",
     "@qpokychuk/tailwind-ratio-plugin": "^2.0.0",
@@ -16,6 +17,8 @@
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.16",
+    "axios": "^1.5.1",
+    "classnames": "^2.3.2",
     "gsap": "^3.12.2",
     "locomotive-scroll": "^4.1.4",
     "next": "13.5.2",
