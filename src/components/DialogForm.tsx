@@ -6,6 +6,9 @@ import { DialogSuccess } from './DialogSuccess'
 import { useForm } from 'react-hook-form'
 import { PhoneInput } from '@/ui/components/PhoneInput'
 import { getMaskedPhoneValue } from '@/utils/helpers/phoneMask'
+import { Policy } from './Form/Form.Policy'
+import { Contacts } from './Form/Form.Contacts'
+import Image from 'next/image'
 
 type IFormDialogProps = IDialogProps & {
   source?: string
@@ -18,11 +21,10 @@ type Inputs = {
 }
 
 export function DialogForm({ source, ...props }: IFormDialogProps) {
-  const [policyDialogOpen, , openPolicyDialog, closePolicyDialog] = useToggle()
   const [successDialogOpen, , openSuccessDialog, closeSuccessDialog] = useToggle()
   const [loading, , loadingStart, loadingEnd] = useToggle()
 
-  const { register, handleSubmit, reset, getValues, setValue } = useForm<Inputs>()
+  const { register, handleSubmit, reset, setValue } = useForm<Inputs>()
 
   async function submitHandler(data: Inputs) {
     loadingStart()
@@ -40,40 +42,19 @@ export function DialogForm({ source, ...props }: IFormDialogProps) {
       <Dialog {...props} className="max-w-max">
         <div className="dialog-form">
           <div className="dialog-form__img">
-            <img src="img/dialog-form.jpg" alt="" />
+            <Image width={400} height={400} src="/img/dialog-form.jpg" alt="" className="w-full" />
           </div>
           <form onSubmit={handleSubmit(submitHandler)} className="dialog-form__content">
             <div className="dialog-form__title">Давайте поговорим</div>
-            <label className="form-field">
-              <div className="text-lg font-medium mb-2">Ваше имя</div>
-              <div className="form-input-cover">
-                <input type="text" className="form-input" required {...register('name')} />
-              </div>
-            </label>
-            <label className="form-field mt-5">
-              <div className="text-lg font-medium mb-2">Ваш телефон</div>
-              <div className="form-input-cover">
-                <input
-                  type="tel"
-                  className="form-input"
-                  placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _"
-                  {...register('phone')}
-                  onChange={(e) => setValue('phone', getMaskedPhoneValue(e.target.value))}
-                  required
-                />
-              </div>
-            </label>
-            <input type="text" className="hidden" hidden value={source} {...register('form')} />
+
+            <Contacts register={register} setValue={setValue} />
+
             <button className="dialog-form__btn btn btn--text btn--contur mt-9" disabled={loading}>
               Отправить
             </button>
-            <div className="text-xs opacity-60 mt-6 cursor-pointer hover:underline" onClick={openPolicyDialog}>
-              Отправляя заявку вы даете согласие на обработку <br />
-              ваших персональных данных
-            </div>
+            <Policy />
           </form>
         </div>
-        <DialogPolicy isOpen={policyDialogOpen} onClose={closePolicyDialog} />
       </Dialog>
 
       <DialogSuccess isOpen={successDialogOpen} onClose={closeSuccessDialog} />

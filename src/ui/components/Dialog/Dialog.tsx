@@ -30,9 +30,17 @@ export function Dialog({ children, isOpen, className, onClose }: IDialogProps) {
               leaveTo="opacity-0 scale-95 translate-y-5"
             >
               <DialogWrap.Panel
-                className={classnames(className, 'w-full m-auto transition-all  bg-white shadow-xl rounded-2xl')}
+                className={classnames(
+                  className,
+                  'w-full m-auto transition-all relative bg-white shadow-xl rounded-2xl overflow-hidden'
+                )}
               >
                 <div className="fixed -z-1" tabIndex={0}></div>
+                <button className=" btn rounded-none btn-icon btn--text absolute right-0 top-0" onClick={onClose}>
+                  <svg className="icon text-xs">
+                    <use xlinkHref="/img/icons.svg#cross" />
+                  </svg>
+                </button>
                 {children}
               </DialogWrap.Panel>
             </Transition.Child>

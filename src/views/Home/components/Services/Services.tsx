@@ -1,4 +1,4 @@
-import { Item } from './Services.item'
+import { IServiceItem, Item } from './Services.item'
 
 const items: IServiceItem[] = [
   {

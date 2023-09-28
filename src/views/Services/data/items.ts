@@ -6,7 +6,7 @@ export const data = [
       {
         name: 'Лендинг (Landing page)',
         description: 'Эффективный маркетинговый инструмент для генерации заявок',
-        path: '',
+        path: '/services/landing/',
       },
       {
         name: 'Корпоративный сайт',
@@ -43,7 +43,7 @@ export const data = [
       {
         name: 'SEO-продвижение',
         description: 'Если задача быть в топе органической выдачи поисковых систем',
-        path: '',
+        path: '/services/seo/',
       },
       {
         name: 'Контекстная реклама',

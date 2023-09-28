@@ -35,12 +35,12 @@ function ScrollInner({ children }: React.PropsWithChildren) {
 
   function checkScrollTop(event: any) {
     if (
-      (window.screen.width > screens.md && event.scroll.y <= 32) ||
-      (window.screen.width <= screens.md && window.scrollY <= 0)
+      (window?.screen?.width > screens.md && event?.scroll.y <= 32) ||
+      (window?.screen?.width <= screens.md && window?.scrollY <= 0)
     ) {
-      document.body.classList.add('scroll-top')
+      document.body?.classList.add('scroll-top')
     } else {
-      document.body.classList.remove('scroll-top')
+      document.body?.classList.remove('scroll-top')
     }
   }
 

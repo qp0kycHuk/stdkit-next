@@ -49,9 +49,9 @@ export function Images({ cover }: IProps) {
     mask.current = createImg('/img/code-mask.svg')
     maskContur.current = createImg('/img/code-mask-contur.svg')
     images.current = [
-      createImg('/img/started-work-1.jpg'),
-      createImg('/img/started-work-2.jpg'),
-      createImg('/img/started-work-3.jpg'),
+      createImg('/img/started-work-1-min.jpg'),
+      createImg('/img/started-work-2-min.jpg'),
+      createImg('/img/started-work-3-min.jpg'),
     ]
   }
 

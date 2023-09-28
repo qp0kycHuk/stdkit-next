@@ -1,5 +1,6 @@
 import { DialogForm } from '@/components/DialogForm'
 import { useToggle } from '@/hooks/useToggle'
+import Image from 'next/image'
 
 export function Flora() {
   const [formDialogOpen, , openFormDialog, closeFormDialog] = useToggle()
@@ -14,7 +15,7 @@ export function Flora() {
             <div className="work__content" data-scroll data-scroll-speed="2">
               <div className="work__title flora__title mb-10 " data-scroll>
                 Интернет-магазин <br />
-                цветов Флора <img src="img/work/flora/title-icon-min.png" alt="" />
+                цветов Флора <Image width={42} height={42} src="/img/work/flora/title-icon-min.png" alt="" />
               </div>
               <div
                 className="leading-normal mb-5 lg:mb-10 work__subtitle mobile-fade-in-down max-lg:text-sm"
@@ -41,22 +42,28 @@ export function Flora() {
             </div>
             <div className="work__preview self-end" data-scroll data-scroll-speed="-2">
               <picture>
-                <source srcSet="img/work/flora/preview-min.webp" type="image/webp" />
-                <img src="img/work/flora/preview-min.jpg" alt="" />
+                <source srcSet="/img/work/flora/preview-min.webp" type="image/webp" />
+                <Image
+                  width={908}
+                  height={869}
+                  src="/img/work/flora/preview-min.jpg"
+                  alt=""
+                  className="w-auto h-auto"
+                />
               </picture>
             </div>
           </div>
           <div className="flora-buner flora-buner--1" data-scroll data-scroll-speed="5">
-            <img src="img/work/flora/buner-1-min.png" alt="" />
+            <img width={1003} height={456} src="/img/work/flora/buner-1-min.png" alt="" className="w-auto h-auto" />
           </div>
           <div className="flora-buner flora-buner--2" data-scroll data-scroll-speed="4">
-            <img src="img/work/flora/buner-2-min.png" alt="" />
+            <img width={505} height={452} src="/img/work/flora/buner-2-min.png" alt="" className="w-auto h-auto" />
           </div>
           <div className="flora-buner flora-buner--3" data-scroll data-scroll-speed="5">
-            <img src="img/work/flora/buner-3-min.png" alt="" />
+            <img width={790} height={273} src="/img/work/flora/buner-3-min.png" alt="" className="w-auto h-auto" />
           </div>
           <div className="flora-buner flora-buner--4" data-scroll data-scroll-speed="3">
-            <img src="img/work/flora/buner-4-min.png" alt="" />
+            <img width={1024} height={568} src="/img/work/flora/buner-4-min.png" alt="" className="w-auto h-auto" />
           </div>
         </section>
       </div>

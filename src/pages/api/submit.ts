@@ -9,6 +9,7 @@ const fields: Record<string, string> = {
   email: 'Email',
   question: 'Вопрос',
   review: 'Отзыв',
+  aim: 'Какие цели',
   utm_term: 'utm_term',
   utm_medium: 'utm_medium',
   utm_campaign: 'utm_campaign',

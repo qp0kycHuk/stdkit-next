@@ -17,7 +17,7 @@ export function Home() {
   useEffect(() => {
     if (router.query.id === 'portfolio' || router.query.id?.includes('portfolio')) {
       setTimeout(() => {
-        scroll.scrollTo('#portfolio', { duration: 0, disableLerp: true })
+        scroll.scrollTo('#portfolio')
       }, 20)
     }
   }, [router.asPath])

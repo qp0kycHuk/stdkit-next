@@ -1,7 +1,14 @@
+// import { DialogForm } from '@/components/DialogForm'
+import { DialogForm } from '@/components/lazy'
+import { useIsServer } from '@/hooks/useIsServer'
+import { useToggle } from '@/hooks/useToggle'
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
 import Head from 'next/head'
 
 export function Contacts() {
+  const [formDialogOpen, , openFormDialog, closeFormDialog] = useToggle()
+  const isServer = useIsServer()
+
   return (
     <>
       <Head>
@@ -10,19 +17,21 @@ export function Contacts() {
 
       <section className="contact-page" data-scroll-section>
         <div className="contact-page-map" id="map">
-          <YMaps>
-            <Map width="100%" height="100%" defaultState={{ center: [45.03191, 38.915172], zoom: 16, behaviors: [] }}>
-              <Placemark
-                geometry={[45.03191, 38.921172]}
-                options={{
-                  iconLayout: 'default#image',
-                  iconImageHref: '../img/geo.png',
-                  iconImageSize: [68, 68],
-                  iconImageOffset: [-34, -34],
-                }}
-              />
-            </Map>
-          </YMaps>
+          {!isServer && (
+            <YMaps>
+              <Map width="100%" height="100%" defaultState={{ center: [45.03191, 38.921172], zoom: 16, behaviors: [] }}>
+                <Placemark
+                  geometry={[45.03191, 38.921172]}
+                  options={{
+                    iconLayout: 'default#image',
+                    iconImageHref: '../img/geo.png',
+                    iconImageSize: [68, 68],
+                    iconImageOffset: [-34, -34],
+                  }}
+                />
+              </Map>
+            </YMaps>
+          )}
         </div>
         <div className="contact-page-content">
           <div className="contact-page__title">Наши контакты</div>
@@ -62,12 +71,7 @@ export function Contacts() {
             <span className="link-hover"> student@stdkit.ru </span>
           </a>
 
-          <button
-            data-fancybox-modal
-            data-type="ajax"
-            data-src="dialog-form.html"
-            className="contact-page__btn btn btn--text btn--contur"
-          >
+          <button data-fancybox-modal onClick={openFormDialog} className="contact-page__btn btn btn--text btn--contur">
             У меня есть вопрос
           </button>
           <div className="contact-page__separator"></div>
@@ -86,6 +90,8 @@ export function Contacts() {
           </div>
         </div>
       </section>
+
+      <DialogForm source={'Есть вопрос'} isOpen={formDialogOpen} onClose={closeFormDialog} />
     </>
   )
 }
