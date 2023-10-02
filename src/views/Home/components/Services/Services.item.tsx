@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 import { ServiceLink } from './Services.Link'
 
 interface IProps {
-  item: IServiceItem
+  item: IService
 }
 
 export function Item({ item }: IProps) {
@@ -35,29 +35,17 @@ export function Item({ item }: IProps) {
         {/* <video src="media/service-hover-programming.mp4" muted autoplay loop></video>  */}
       </div>
       <div className="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
-        <div className="text-2.5xl lg:text-3xl font-bold mb-7 text-center index-service-item-title">{item.title}</div>
+        <div className="text-2.5xl lg:text-3xl font-bold mb-7 text-center index-service-item-title">{item.name}</div>
         <div className="opacity-60 lg:text-lg text-center index-service-item-subtitle">{item.description}</div>
         <div className="text-sm lg:text-lg text-center mt-auto mb-5 index-service-item-sign">
-          {item.links?.map((item, index) => (
+          {item.items?.map((item, index) => (
             <Fragment key={index}>
               {index > 0 && <span> / </span>}
-              <ServiceLink item={item} />
+              <ServiceLink name={item.name} path={item.path} />
             </Fragment>
           ))}
         </div>
       </div>
     </div>
   )
-}
-
-export interface IServiceItem {
-  color: 'purple' | 'blue' | 'orange' | 'green'
-  title: string
-  description: React.ReactNode
-  links?: IItemLink[]
-}
-
-interface IItemLink {
-  path?: string
-  name: string
 }

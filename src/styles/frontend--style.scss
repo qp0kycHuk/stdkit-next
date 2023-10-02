@@ -65,7 +65,7 @@ body {
 
 
   * {
-    font-family: var(--font-base);
+    font-family : var(--font-base);
     font-display: swap;
   }
 
@@ -1807,9 +1807,15 @@ body:not(.loaded) .started {
     display       : flex;
     align-items   : flex-start;
     flex-direction: column;
+    min-width: 180px;
   }
 
   &-contacts {
+    @media (min-width:$md) {
+      white-space: nowrap;
+
+    }
+
     @media(max-width:$sm) and (min-width:$xs) {
       grid-column-end: span 2;
     }

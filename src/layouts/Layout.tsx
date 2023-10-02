@@ -16,7 +16,7 @@ export function Layout({ children }: React.PropsWithChildren) {
     <ScrollContextProvider>
       <PageTransition />
       <Header isIndex={isIndex} />
-      <div className={classNames('transition-opacity', loading ? 'opacity-0' : ' delay-500')}>{children}</div>
+      <div className={classNames('transition-opacity', loading ? 'opacity-0 ' : ' delay-500')}>{children}</div>
       <Footer />
     </ScrollContextProvider>
   )

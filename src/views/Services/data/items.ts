@@ -1,6 +1,7 @@
-export const data = [
+export const data: IService[] = [
   {
     name: 'Разработка сайта',
+    description: 'Разработка эффективных сайтов различной сложности',
     color: 'purple',
     items: [
       {
@@ -22,6 +23,7 @@ export const data = [
   },
   {
     name: 'Работа с сайтом',
+    description: 'Если есть сайт, но нужны заботливые, профессиональные руки',
     color: 'blue',
     items: [
       {
@@ -38,6 +40,7 @@ export const data = [
   },
   {
     name: 'Продвижение сайта',
+    description: 'Качественный трафик - залог успешных продаж',
     color: 'orange',
     items: [
       {
@@ -59,6 +62,7 @@ export const data = [
   },
   {
     name: 'Разработка веб-приложений и систем',
+    description: 'Находим решение для нестандартных задач',
     color: 'green',
     items: [
       {

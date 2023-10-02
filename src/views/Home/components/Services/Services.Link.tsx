@@ -3,25 +3,26 @@ import { useToggle } from '@/hooks/useToggle'
 import Link from 'next/link'
 
 interface ILinkProps {
-  item: IItemLink
+  name: string
+  path?: string
 }
 
-export function ServiceLink({ item }: ILinkProps) {
+export function ServiceLink({ name, path }: ILinkProps) {
   const [formDialogOpen, , openFormDialog, closeFormDialog] = useToggle()
 
   return (
     <>
-      {item.path ? (
-        <Link className="hover:underline" href={item.path}>
-          {item.name}
+      {path ? (
+        <Link className="hover:underline" href={path}>
+          {name}
         </Link>
       ) : (
         <button className="hover:underline" onClick={openFormDialog}>
-          {item.name}
+          {name}
         </button>
       )}
 
-      <DialogForm source={item.name} isOpen={formDialogOpen} onClose={closeFormDialog} />
+      <DialogForm source={name} isOpen={formDialogOpen} onClose={closeFormDialog} />
     </>
   )
 }

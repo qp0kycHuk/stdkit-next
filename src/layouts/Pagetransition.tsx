@@ -28,9 +28,9 @@ export function PageTransition() {
     tl.current.to(ref.current, {
       scaleX: 0,
       transformOrigin: 'left',
-      duration: 0.75,
+      duration: 1,
     })
   }
 
-  return <div className="fixed inset-0 bg-white z-[320]" ref={ref}></div>
+  return <div className="fixed inset-0 bg-white z-[320] flex" ref={ref}></div>
 }

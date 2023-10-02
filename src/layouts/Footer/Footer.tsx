@@ -1,38 +1,28 @@
-// import { Credentials } from './Footer.Credentials'
-
+import { data as serviceData } from '@/views/Services/data/items'
 import Link from 'next/link'
 
 export function Footer() {
   return (
     <>
       <footer className="footer" data-scroll-section>
-        <div className="footer-top">
-          <div className="footer-nav">
-            <div className="text-lg font-semibold mb-6">Разработка сайта</div>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Корпоративный сайт</a>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Интернет-магазин</a>
-            <Link href="/services/landing/" className="text-base opacity-80 mb-5 btn btn--link link-hover">
-              Landing Page
-            </Link>
-          </div>
-          <div className="footer-nav">
-            <div className="text-lg font-semibold mb-6">Работа с сайтом</div>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Техническая поддержка</a>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">SEO-продвижение</a>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Контекстная реклама</a>
-          </div>
-          <div className="footer-nav">
-            <div className="text-lg font-semibold mb-6">Ведение соцсетей</div>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Оформление аккаунта</a>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Администрирование</a>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Дизайн и креатив</a>
-          </div>
-          <div className="footer-nav">
-            <div className="text-lg font-semibold mb-6">Ведение соцсетей</div>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Оформление аккаунта</a>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Администрирование</a>
-            <a className="text-base opacity-80 mb-5 btn btn--link link-hover">Дизайн и креатив</a>
-          </div>
+        <div className="footer-top gap-3">
+          {serviceData.map((item, index) => (
+            <div className="footer-nav " key={index}>
+              <div className="text-lg font-semibold mb-6">{item.name}</div>
+              {item.items.map((service, i) =>
+                service.path ? (
+                  <Link href={service.path} className="text-base opacity-80 mb-5 btn btn--link link-hover" key={i}>
+                    {service.name}
+                  </Link>
+                ) : (
+                  <a className="text-base opacity-80 mb-5 btn btn--link link-hover" key={i}>
+                    {service.name}
+                  </a>
+                )
+              )}
+            </div>
+          ))}
+
           <div className="footer-top__separator"></div>
           <div className="footer-nav footer-contacts">
             <div className="text-lg font-semibold mb-6">Контакты</div>
