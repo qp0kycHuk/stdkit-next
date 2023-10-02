@@ -33,23 +33,23 @@ export function Place() {
           </div>
           <div className="work__preview self-end" data-scroll data-scroll-speed="-2">
             <picture>
-              <source srcSet="img/work/krav/preview-min.webp" type="image/webp" />
-              <img src="img/work/krav/preview-min.jpg" alt="" />
+              <source srcSet="/img/work/krav/preview-min.webp" type="image/webp" />
+              <img width={908} height={869} src="/img/work/krav/preview-min.jpg" alt="" />
             </picture>
           </div>
         </div>
 
         <div className="krav-buner krav-buner--1" data-scroll data-scroll-speed="5">
-          <img src="img/work/krav/buner-1-min.png" alt="" />
+          <img src="/img/work/krav/buner-1-min.png" alt="" />
         </div>
         <div className="krav-buner krav-buner--2" data-scroll data-scroll-speed="4">
-          <img src="img/work/krav/buner-2-min.png" alt="" />
+          <img src="/img/work/krav/buner-2-min.png" alt="" />
         </div>
         <div className="krav-buner krav-buner--3" data-scroll data-scroll-speed="5" data-scroll-delay="0.25">
-          <img src="img/work/krav/buner-3-min.png" alt="" />
+          <img src="/img/work/krav/buner-3-min.png" alt="" />
         </div>
         <div className="krav-buner krav-buner--4" data-scroll data-scroll-speed="3" data-scroll-delay="0.25">
-          <img src="img/work/krav/buner-4-min.png" alt="" />
+          <img src="/img/work/krav/buner-4-min.png" alt="" />
         </div>
       </section>
     </div>

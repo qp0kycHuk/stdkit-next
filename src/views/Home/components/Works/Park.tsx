@@ -38,28 +38,28 @@ export function Park() {
           </div>
           <div className="work__preview self-end" data-scroll data-scroll-speed="-2">
             <picture>
-              <source srcSet="img/work/park/preview-min.webp" type="image/webp" />
-              <img src="img/work/park/preview-min.jpg" alt="" />
+              <source srcSet="/img/work/park/preview-min.webp" type="image/webp" />
+              <img width={908} height={869} src="/img/work/park/preview-min.jpg" alt="" />
             </picture>
           </div>
         </div>
         <div className="park-buner park-buner--1" data-scroll data-scroll-speed="4">
-          <img src="img/work/park/buner-1-min.png" alt="" />
+          <img src="/img/work/park/buner-1-min.png" alt="" />
         </div>
         <div className="park-buner park-buner--2" data-scroll data-scroll-speed="2">
-          <img src="img/work/park/buner-2-min.png" alt="" />
+          <img src="/img/work/park/buner-2-min.png" alt="" />
         </div>
         <div className="park-buner park-buner--3" data-scroll data-scroll-speed="8">
-          <img src="img/work/park/buner-3-min.png" alt="" />
+          <img src="/img/work/park/buner-3-min.png" alt="" />
         </div>
         <div className="park-buner park-buner--4" data-scroll data-scroll-speed="6">
-          <img src="img/work/park/buner-4-min.png" alt="" />
+          <img src="/img/work/park/buner-4-min.png" alt="" />
         </div>
         <div className="park-buner park-buner--5" data-scroll data-scroll-speed="2">
-          <img src="img/work/park/buner-5-min.png" alt="" />
+          <img src="/img/work/park/buner-5-min.png" alt="" />
         </div>
         <div className="park-buner park-buner--6" data-scroll data-scroll-speed="4">
-          <img src="img/work/park/buner-6-min.png" alt="" />
+          <img src="/img/work/park/buner-6-min.png" alt="" />
         </div>
       </section>
     </div>

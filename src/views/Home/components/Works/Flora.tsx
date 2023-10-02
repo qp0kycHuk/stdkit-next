@@ -43,13 +43,7 @@ export function Flora() {
             <div className="work__preview self-end" data-scroll data-scroll-speed="-2">
               <picture>
                 <source srcSet="/img/work/flora/preview-min.webp" type="image/webp" />
-                <Image
-                  width={908}
-                  height={869}
-                  src="/img/work/flora/preview-min.jpg"
-                  alt=""
-                  className="w-auto h-auto"
-                />
+                <img width={908} height={869} src="/img/work/flora/preview-min.jpg" alt="" className="w-auto h-auto" />
               </picture>
             </div>
           </div>
