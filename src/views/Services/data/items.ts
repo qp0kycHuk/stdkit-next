@@ -29,7 +29,7 @@ export const data: IService[] = [
       {
         name: 'Техническая поддержка',
         description: 'Ваши задачи - наши профессиональные руки',
-        path: '',
+        path: '/services/support/',
       },
       {
         name: 'Доработка сайта',

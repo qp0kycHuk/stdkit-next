@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { throttle } from 'throttle-debounce'
 import gsap from 'gsap'
 
@@ -15,6 +15,8 @@ const DEFAULT_RECT = {
   height: 297,
 }
 
+const FPS = 144
+
 export function Images({ cover }: IProps) {
   const images = useRef<HTMLImageElement[]>()
   const mask = useRef<HTMLImageElement>()
@@ -25,6 +27,8 @@ export function Images({ cover }: IProps) {
 
   const $canvas = useRef<HTMLCanvasElement>(null)
   const tween = useRef<gsap.core.Tween>()
+
+  const coverRect = useMemo(() => cover.current?.getBoundingClientRect(), [cover.current])
 
   useEffect(addListeners, [cover])
   useEffect(setSizes, [$canvas.current])
@@ -93,13 +97,13 @@ export function Images({ cover }: IProps) {
       y: offsetY,
     }
 
-    const throttleDraw = throttle(1000 / 60, draw)
+    const throttleDraw = throttle(1000 / FPS, draw)
 
     tween.current?.kill()
     tween.current = gsap.to(target.current, {
       ...targetTo,
       onUpdate: () => throttleDraw(target.current),
-      duration: 0.5,
+      duration: 1,
       ease: 'elastic.out(1, 1)',
     })
   }
@@ -128,7 +132,7 @@ export function Images({ cover }: IProps) {
       y: params.y - params.height / 2,
     }
 
-    const { width: coverWidth, left: coverLeft } = cover.current.getBoundingClientRect()
+    const { width: coverWidth, left: coverLeft } = coverRect || cover.current.getBoundingClientRect()
     let imgBreak = false
     let currentImage = images.current?.[0]
 

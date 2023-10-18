@@ -5,6 +5,7 @@ import { Types } from './components/Seo.Types/Seo.Types'
 import { Features } from './components/Seo.Features'
 import { Resume } from './components/Seo.Resume'
 import Link from 'next/link'
+import { Background } from '@/components/Background/Background'
 
 export function Seo() {
   return (
@@ -13,12 +14,7 @@ export function Seo() {
         <title>Создание и продвижение сайтов в Краснодаре : Веб-студия КИТ</title>
       </Head>
 
-      <div className="background-wrapper">
-        <div className="background animate__animated animate__fadeIn" data-scroll-section>
-          <div className="background-item background-item--1"></div>
-          <div className="background-item background-item--2"></div>
-        </div>
-      </div>
+      <Background scroll />
 
       <section className="page-seo overflow-hidden" data-scroll-section>
         <div className="text-xs opacity-60 mb-10">

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Images } from './Started.Images'
 import { useRef } from 'react'
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
+import { Background } from '@/components/Background/Background'
 
 export function Started() {
   const container = useRef<HTMLDivElement>(null)
@@ -9,14 +10,7 @@ export function Started() {
 
   return (
     <section className="started code-cursor-cover" data-scroll-section>
-      <div className="background-wrapper">
-        <div className="background animate__animated animate__fadeIn">
-          <div className="background-item background-item--1"></div>
-          <div className="background-item background-item--2"></div>
-          <div className="background-item background-item--3"></div>
-          <div className="background-item background-item--4"></div>
-        </div>
-      </div>
+      <Background />
 
       <div className="started-inner">
         <div className="started__logo-wrapper" ref={container}>

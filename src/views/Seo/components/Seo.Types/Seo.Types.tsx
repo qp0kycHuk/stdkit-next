@@ -1,4 +1,4 @@
-import { Item } from './Seo.Types.Item'
+import { Types as TypesComponent } from '@/components/Service/TypesOfWork/Types'
 
 export function Types() {
   const items = [
@@ -77,23 +77,13 @@ export function Types() {
   ]
 
   return (
-    <section className="relative py-0 mt-10 md:mt-24" data-scroll-section>
-      <div className="text-2xl md:text-3.5xl font-semibold mb-8 md:mb-14 mobile-fade-in-down relative z-1" data-scroll>
-        SEO включает в себя 6 видов работ
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-4 relative z-1">
-        {items.map((item, index) => (
-          <Item key={index} title={item.title} icon={item.icon} description={item.description} />
-        ))}
-      </div>
-
+    <TypesComponent buttonText="Смотреть пример" items={items} title="SEO включает в себя 6 видов работ">
       <picture>
         <source srcSet="/img/seo/types-bg-1-min.webp" type="image/webp" />
         <img
           src="/img/seo/types-bg-1-min.png"
           alt=""
-          className="absolute object-left object-scale-down -top-1/2 left-0 max-w-full opacity-30 pointer-events-none max-lg:h-3/4 max-lg:bottom-auto max-lg:top-0 max-lg:object-cover"
+          className="absolute object-left object-scale-down -top-1/2 -left-1/2 max-w-full opacity-30 pointer-events-none max-lg:h-3/4 max-lg:bottom-auto max-lg:top-0 max-lg:object-cover"
         />
       </picture>
       <picture>
@@ -104,6 +94,6 @@ export function Types() {
           className="absolute top-0 left-0 w-full opacity-30 pointer-events-none max-lg:h-3/4 max-lg:top-auto max-lg:bottom-0 max-lg:object-cover"
         />
       </picture>
-    </section>
+    </TypesComponent>
   )
 }

@@ -1,29 +1,24 @@
-import { DialogForm } from '@/components/DialogForm'
-import { useToggle } from '@/hooks/useToggle'
+import { Resume as ResumeComponent } from '@/components/Service/Resume/Resume'
 
-export function Resume({ className = '' }) {
-  const [formDialogOpen, , openFormDialog, closeFormDialog] = useToggle()
+interface IProps {
+  className?: string
+}
 
+export function Resume({ className }: IProps) {
   return (
-    <div className={className}>
-      <div className="text-2xl sm:text-3.5xl font-semibold mb-8 md:mb-12 mobile-fade-in-down" data-scroll>
-        Резюме
-      </div>
-      <div className="lg:text-lg leading-normal opacity-70 mobile-fade-in-down" data-scroll>
+    <ResumeComponent
+      className={className}
+      title="Резюме"
+      description={`
         Предлагаем разработку сайтов любой тематики. Это может быть как простенький одностраничный сайт, так и
         сложнейший интернет-магазин с несколькими тысячами товаров.Предлагаем разработку сайтов любой тематики. Это
         может быть как простенький одностраничный сайт, так и сложнейший интернет-магазин с несколькими тысячами
         товаров.
-      </div>
-      <div className="resume-itog mt-12 mobile-fade-in-down" data-scroll>
-        <div className="text-2xl lg:text-3.5xl font-semibold">
-          Итак, хотите заказать у нас SEO? <span className="max-lg:hidden">Жмите /→→→</span>
-        </div>
-        <button className="btn btn--contur" onClick={openFormDialog}>
-          Заказать SEO
-        </button>
-      </div>
-      <DialogForm source={'Заказать SEO'} isOpen={formDialogOpen} onClose={closeFormDialog} />
-    </div>
+      `}
+      buttonText="Заказать SEO"
+      source="Заказать SEO"
+    >
+      Итак, хотите заказать у нас SEO? <span className="max-lg:hidden">Жмите /→→→</span>
+    </ResumeComponent>
   )
 }

@@ -5,6 +5,7 @@ import { Slider } from './components/Landing.Slider'
 import { Steps } from './components/Landing.Steps'
 import { Qwiz } from './components/Landing.Qwiz/Qwiz'
 import { Resume } from './components/Landing.Resume'
+import { Background } from '@/components/Background/Background'
 
 export function Landing() {
   return (
@@ -13,12 +14,7 @@ export function Landing() {
         <title>Создание и продвижение сайтов в Краснодаре : Веб-студия КИТ</title>
       </Head>
 
-      <div className="background-wrapper">
-        <div className="background animate__animated animate__fadeIn" data-scroll-section>
-          <div className="background-item background-item--1"></div>
-          <div className="background-item background-item--2"></div>
-        </div>
-      </div>
+      <Background scroll />
 
       <section className="page-landing pb-16" data-scroll-section>
         <div className="text-xs opacity-60 mb-10">
