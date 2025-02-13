@@ -19,7 +19,7 @@ const fields: Record<string, string> = {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // const data = req.body
   const CHAT_ID = '-707118674'
-  const TELEGRAM_TOKEN = '5729428675:AAFPDzoDP7OBZHvideLY0cIjMXbR4QXEG-Y'
+  const TELEGRAM_TOKEN = ''
 
   let message = ''
 
